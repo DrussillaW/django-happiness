@@ -1,15 +1,16 @@
-from django.conf import settings
 import django.db.models.deletion
+from django.conf import settings
 from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("receitas", "0003_rename_modo_de_preparo_receita_modo_preparo"),
+        ("receitas", "0007_receita_foto_receita"),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
-        migrations.AddField(
+        migrations.AlterField(
             model_name="receita",
             name="pessoa",
             field=models.ForeignKey(

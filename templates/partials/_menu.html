@@ -1,4 +1,5 @@
 {% load static %}
+
 <!-- ##### Header Area Start ##### -->
 <header class="header-area">
 
@@ -56,11 +57,18 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a href="{% url 'index' %}">Home</a></li>
-{#                                <li><a href="{% url 'receita' %}">Receitas</a></li>#}
+                                {% if user.is_authenticated %}
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                    <li><a href="{% url 'cria_receita' %}">Criar Receita</a></li>
+                                    <li><a href="{% url 'dashboard' %}">Minhas Receitas</a></li>
+                                    <li><a href="{% url 'logout' %}">Sair</a></li>
+
+                                {% else %}
+                                    <li><a href="{% url 'cadastro' %}">Cadastro</a></li>
+                                    <li><a href="{% url 'login' %}">Login</a></li>
+                                {% endif %}
                             </ul>
 
-                            <!-- Formulario de busca -->
                             <div class="search-btn">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </div>

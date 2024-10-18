@@ -5,11 +5,11 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("receitas", "0003_rename_modo_de_preparo_receita_modo_preparo"),
+        ("receitas", "0004_receita_pessoa"),
     ]
 
     operations = [
-        migrations.AddField(
+        migrations.AlterField(
             model_name="receita",
             name="pessoa",
             field=models.ForeignKey(
