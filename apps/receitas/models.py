@@ -1,5 +1,4 @@
 from django.db import models
-from pessoas.models import Pessoa
 from django.contrib.auth.models import User
 
 
